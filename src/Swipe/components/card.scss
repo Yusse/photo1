@@ -1,0 +1,141 @@
+
+.card {
+    background: whitesmoke;
+    background-size: 120% 120%;
+    position: absolute;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+    width: 300px;
+    height: 400px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    -webkit-tap-highlight-color: transparent;
+
+    &.is-active {
+        transition: 0.5s ease-in-out;
+        background-size: 100% 100%;
+    }
+
+    .arrow {
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        text-align: center;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-top: -4px;
+
+        &--down {
+            background-image: url("https://image.flaticon.com/icons/png/512/66/66783.png");
+        }
+
+        &--up {
+            background-image: url("https://image.flaticon.com/icons/png/512/66/66783.png");
+            transform: rotate(180deg);
+        }
+    }
+
+    .desc {
+        position: absolute;
+        bottom: 16px;
+        width: 90%;
+        border-radius: 8px;
+        box-shadow: 0 8px 20px 0 rgba(49, 53, 59, 0.3);
+        background-color: #ffffff;
+        padding: 16px;
+        height: 62px;
+        overflow: hidden;
+        transition: height 0.5s ease-out, bottom 0.5s ease-out;
+
+        &--active {
+            bottom: -60px;
+            height: 138px;
+            transition: height 0.3s ease-in, bottom 0.3s ease-in;
+        }
+
+        &__main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &__detail {
+            opacity: 0;
+            animation-name: fadeInDown;
+            animation-duration: 0.5s;
+            animation-timing-function: ease-in-out;
+            padding-top: 16px;
+
+            &--active {
+                animation-name: fadeInUp;
+                animation-duration: 0.5s;
+                animation-timing-function: ease-in-out;
+                opacity: 1;
+            }
+        }
+
+        &__title {
+            font-size: 12px;
+            &--main {
+                font-weight: bold;
+                color: rgba(0, 0, 0, 0.7);
+            }
+            &--sub {
+                color: rgba(0, 0, 0, 0.38);
+                text-transform: uppercase;
+            }
+        }
+
+        &__label {
+            font-size: 12px;
+            &--lbl {
+                color: rgba(0, 0, 0, 0.38);
+                margin-bottom: 8px;
+                width: 35%;
+                display: inline-block;
+                vertical-align: top;
+            }
+            &--value {
+                color: rgba(0, 0, 0, 0.7);
+                margin-bottom: 8px;
+                width: 65%;
+                display: inline-block;
+                vertical-align: top;
+            }
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+        }
+
+        to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        }
+    }
+
+    @keyframes fadeInDown {
+        from {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        }
+
+        to {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "swipe-microinteraction",
+  "version": "1.0.0",
+  "description": "Based on dribbble shot by: https://dribbble.com/shots/4959470-Dating-App\n\ncredits to react-swipy for swiping interaction",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "react": "16.8.3",
+    "react-dom": "16.8.3",
+    "react-router-dom": "4.3.1",
+    "react-scripts": "2.0.3",
+    "react-swipy": "0.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
+}
